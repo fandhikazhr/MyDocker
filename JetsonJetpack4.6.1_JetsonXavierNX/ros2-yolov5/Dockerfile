@@ -39,7 +39,7 @@ RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o
     wget https://github.com/ros2/ros2/releases/download/release-dashing-20210610/ros2-dashing-20210610-linux-bionic-arm64.tar.bz2 -P ~/Downloads && \
     mkdir -p ~/ros2_dashing && \
     cd ~/ros2_dashing && \
-    tar xf ~/Downloads/ros2-dashing-linux-x86_64.tar.bz2 && \
+    tar xf ~/Downloads/ros2-dashing-20210610-linux-bionic-arm64.tar.bz2 && \
     rm -rf /var/lib/apt/lists/*
 
 # Inisialisasi ROS2
