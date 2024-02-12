@@ -33,6 +33,12 @@ RUN pip3 install torch torchvision torchaudio
 # Install TensorFlow
 RUN pip3 install tensorflow
 
+# Install PyCuda
+RUN pip3 install pycuda
+
+# Install numpy, pandas, numba, Cupy
+RUN pip3 install numpy pandas numba cupy
+
 # Install ROS2 Dashing
 RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg && \
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null && \
