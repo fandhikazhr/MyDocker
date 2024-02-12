@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     wget \
     git \
+    vim \
+    nano \
     libopencv-dev \
     libblas-dev \
     libffi-dev \
