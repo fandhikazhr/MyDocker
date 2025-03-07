@@ -1,0 +1,31 @@
+# Gunakan TensorFlow resmi dengan Python 3
+FROM tensorflow/tensorflow:latest
+
+# Update paket dan install dependency tambahan
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    wget \
+    unzip \
+    apt-utils \
+    libgl1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install semua library yang dibutuhkan
+RUN pip install --no-cache-dir \
+    numpy \
+    opencv-python \
+    tensorflow-hub \
+    tensorflow-datasets \
+    tflite-runtime \
+    pillow \
+    matplotlib
+
+# Set direktori kerja di dalam container
+WORKDIR /app
+
+# Copy semua file dari host ke container
+COPY . /app
+
+# Set agar container langsung siap digunakan tanpa konfigurasi tambahan
+CMD ["bash"]
+
