@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  flask-app:
+    build: .
+    ports:
+      - "5000:5000"
+    devices:
+      - "/dev/video0:/dev/video0" # Tambahkan akses ke kamera
+    environment:
+      - DISPLAY=${DISPLAY} # Jika menggunakan GUI
+    restart: unless-stopped
+
